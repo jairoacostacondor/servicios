@@ -3,22 +3,18 @@
 #include <unistd.h>
 #include <sys/wait.h>
 #include <sys/types.h>
-
 int main(){
-	pid_t pid, Hijo_pid;
-	pid = fork(); //crea un subproceso
-		      //fork hace que se cree una bifurcacion osea que se crean 2 partes y ejecutan el mismo cod:w:q
+	//declaramos las varables de padre e hijo
 	
-	if(pid == 0){
-		//el proceso hijo
-		printf("soy el hijo\n\tPID:%d\n\tPPID:%d\n",getpid(),getppid());
+	//inciamos el fork
+	pid_t pid = fork();
+	if(pid == 0) {
+		//sabemos que todos los procesos hijos tiene un pid de 0 por eso al igualarlo sabemos que es el hijo
+		printf("Holaaa soy el proceso HIJO con un PID de: %d\n y un PPID: %d\n",getpid(),getppid());
 	}
 	else{
-		printf("Soy el padre.\n\tPID:%d\n\tPPID:%d\n\tPID Hijo: %d",getpid(),getppid(),pid);
-		printf("\t Variable PID: %d", pid);
-			//proceso padre
+		//Ahora es el turno del padre
+		printf("Holaaa soy el PADRE con un PID de: %d\n y un PPID de: %d\n y he creado un proceso HIJO con PID: %d\n",getpid(),getppid(),pid);
 	}
-	printf("hola\n");
-	printf("hola\n");
 	return 0;
 }
