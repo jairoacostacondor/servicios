@@ -1,0 +1,14 @@
+//EJERCICIO 1
+¿Coincide algún PID o algún PPID? ¿Por qué?
+Sí, hay coincidencias en los PID y PPID respectivamente. Cuando el proceso padre se ejecuta, imprime su propio PID y
+el PID del proceso hijo que ha creado. 
+Por otro lado, al ejecutar el proceso hijo, éste imprime su propio PID, y su PPID, que coincide con el PID del proceso padre. Esto se debe a que el hijo es creado por el padre, lo que establece una relación entre ellos: el padre tiene el PID del hijo, y el hijo tiene como PPID el PID del padre. Por lo tanto, el PID del padre y el PPID del hijo coinciden, reflejando la jerarquía de los procesos en el sistema
+
+
+
+//EJERCICIO 4
+Hay varios errores
+1º la pregunta de hola que tal estas? no se asigna al padre que es el objetivo
+que el padre pregunte y luego el hijo responda. Tambien hay errores del uso de \\ 
+en vez de usar %d\n
+2º Asegurarnos que el padre pregunte primero y una vez termine responda el hijo
